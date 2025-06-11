@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Me.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-stone-800">
+
+    <div id="app" class="paper container mx-auto p-6 md:p-10 max-w-6xl my-8 rounded-sm">
+
+        <header class="text-center mb-10 border-b-2 border-dashed border-stone-300 pb-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-stone-900">Dear Me.</h1>
+            <p class="text-stone-600 mt-2">Send a little wisdom to your future self</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <div id="journal-area">
+            <!-- New Entry Form -->
+            <div id="entry-form" class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">A Message for the Future</h2>
+                <div class="p-2 bg-white border border-stone-200 shadow-inner">
+                    <textarea id="message-input" class="w-full h-64 lined-textarea" placeholder="Dear Future Me..."></textarea>
+                </div>
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-2 text-stone-600">
+                        <label for="delivery-years" class="font-medium">Remind me in:</label>
+                        <input type="number" id="delivery-years" class="p-2 bg-transparent border-b-2 border-stone-400 focus:outline-none w-20 text-center" min="1" step="1" placeholder="1">
+                        <span class="font-medium">year(s)</span>
+                    </div>
+                    <button id="save-button" class="w-full sm:w-auto stamp-button py-2 px-6 rounded-sm">
+                        Save the Date
+                    </button>
+                </div>
+                <p id="error-message" class="text-red-600 text-sm mt-4 text-center font-bold"></p>
+            </div>
+
+            <!-- Confirmation Message -->
+            <div id="confirmation-message" class="hidden text-center py-16">
+                <h2 class="text-3xl font-bold text-green-700 mb-4">Check Your Calendar!</h2>
+                <p class="text-stone-600 text-lg">A new browser tab has opened with your pre-filled Google Calendar event. <br>Just click "Save" on that page to confirm your reminder.</p>
+                <div class="mt-8">
+                     <button id="reset-button" class="stamp-button py-2 px-6 rounded-sm">Write Another</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
